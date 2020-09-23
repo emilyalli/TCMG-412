@@ -14,3 +14,20 @@ else:
   print('beginning log inspection...')
   
   file = open("cache.log","r", encoding="windows-1252")
+
+  total_requests = 0
+  reg_year = 0
+  today = datetime(1995, 10, 11, 14, 14, 17)
+  print("Today:", today)
+  for line in file:
+    lines = line.split(" ")
+    if len(lines) < 10:
+      continue
+    total_requests += 1
+    date = datetime.strptime(lines[3].replace("[", ""), "%d/%b/%Y:%H:%M:%S")
+    delta = today - date
+    if delta.days <= 1
+file.close()
+
+print("Total requests: ",total_requests)
+print("Requests in Past Year: ", req_year)
