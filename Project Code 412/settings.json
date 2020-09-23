@@ -21,13 +21,14 @@ else:
   print("Today:", today)
   for line in file:
     lines = line.split(" ")
-    if len(lines) < 10:
+    if len(lines) < 10: 
       continue
     total_requests += 1
     date = datetime.strptime(lines[3].replace("[", ""), "%d/%b/%Y:%H:%M:%S")
     delta = today - date
-    if delta.days <= 1
+    if delta.days <= 365 and delta.seconds <= 86400:
+      reg_year += 1
 file.close()
 
 print("Total requests: ",total_requests)
-print("Requests in Past Year: ", req_year)
+print("Requests in Past Year: ", reg_year)
